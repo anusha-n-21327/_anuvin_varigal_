@@ -29,6 +29,7 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 bg-slate-900/50 backdrop-blur-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="flex items-center space-x-3">
+            <img src="/anuvin-varigal-logo.jpeg" alt="Anuvin Varigal Logo" className="h-12 w-12 rounded-full object-cover border-2 border-slate-600" />
             <span className="text-2xl font-bold text-white">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
