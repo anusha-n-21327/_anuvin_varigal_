@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { useAuth } from "@/context/AuthContext";
 import { LoginDialog } from "@/components/LoginDialog";
-import { showSuccess } from "@/utils/toast";
+import { showSuccess, showError } from "@/utils/toast";
 
 const Index = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -54,7 +54,7 @@ const Index = () => {
             Welcome to ANUVIN VARIGAL
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-slate-300">
-            ...where words and emotions meet.
+            where words and emotions meet.
           </p>
           <Button size="lg" className="text-lg px-8 py-6 bg-violet-600 hover:bg-violet-700 text-white" onClick={handleReadPoemsClick}>
             Read my poems
