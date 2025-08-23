@@ -11,7 +11,8 @@ const PoemCard = ({ poem }: PoemCardProps) => {
   return (
     <div
       className="group w-full h-64 [perspective:1000px]"
-      onClick={() => setIsFlipped(!isFlipped)}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
     >
       <div
         className={cn(
@@ -20,13 +21,13 @@ const PoemCard = ({ poem }: PoemCardProps) => {
         )}
       >
         {/* Front of the card */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] bg-white/80 backdrop-blur-sm border-2 border-gray-300 rounded-lg shadow-lg flex items-center justify-center p-4 cursor-pointer">
-          <p className="text-lg font-semibold">Click to Read</p>
+        <div className="absolute w-full h-full [backface-visibility:hidden] bg-slate-800/80 backdrop-blur-sm border-2 border-slate-700 rounded-lg shadow-lg flex items-center justify-center p-4 cursor-pointer">
+          <p className="text-lg font-semibold text-slate-300">Hover to Read</p>
         </div>
 
         {/* Back of the card */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-white/80 backdrop-blur-sm border-2 border-gray-300 rounded-lg shadow-lg flex items-center justify-center p-6 cursor-pointer">
-          <p className="text-center whitespace-pre-line text-base md:text-lg leading-relaxed">
+        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-slate-800/80 backdrop-blur-sm border-2 border-slate-700 rounded-lg shadow-lg flex items-center justify-center p-6 cursor-pointer">
+          <p className="text-center whitespace-pre-line text-base md:text-lg leading-relaxed text-slate-200">
             {poem}
           </p>
         </div>
