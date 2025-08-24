@@ -76,7 +76,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex justify-center">
-              <img src="/author-image.jpeg" alt="A quill and ink, representing poetry" className="h-64 w-64 rounded-full object-cover shadow-2xl border-4 border-slate-700" />
+              <img src="/quill-image.jpeg" alt="A quill and ink, representing poetry" className="h-64 w-64 rounded-full object-cover shadow-2xl border-4 border-slate-700" />
             </div>
           </div>
         </section>
