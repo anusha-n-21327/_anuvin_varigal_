@@ -95,7 +95,7 @@
     --ring: 330 80% 60%;
   }
 
-  /* NEW: Poetic & Creative Theme */
+  /* Poetic & Creative Theme */
   .poetic {
     --background: 210 40% 98%; /* Light sky blue */
     --foreground: 240 10% 15%;
@@ -117,6 +117,29 @@
     --input: 210 40% 96%;
     --ring: 270 60% 65%;
   }
+
+  /* NEW: Whispers of Ink Theme */
+  .whispers-of-ink {
+    --background: 39 56% 95%; /* Parchment */
+    --foreground: 240 5% 25%; /* Soft Ink Black */
+    --card: 0 0% 100%; /* White Paper */
+    --card-foreground: 240 5% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 5% 25%;
+    --primary: 220 40% 30%; /* Deep Ink Blue */
+    --primary-foreground: 39 56% 95%; /* Parchment */
+    --secondary: 220 10% 80%; /* Light Slate Grey */
+    --secondary-foreground: 220 40% 30%; /* Deep Ink Blue */
+    --muted: 39 30% 90%; /* Lighter Parchment */
+    --muted-foreground: 240 5% 45%; /* Muted Ink */
+    --accent: 35 70% 50%; /* Gold */
+    --accent-foreground: 240 5% 25%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 39 20% 85%; /* Parchment Border */
+    --input: 39 30% 92%; /* Parchment Input */
+    --ring: 220 40% 30%;
+  }
 }
 
 @layer base {
@@ -131,6 +154,9 @@
   }
   .poetic body {
     background-image: linear-gradient(to top right, hsl(var(--background)), hsl(var(--card)));
+  }
+  .whispers-of-ink body {
+    background-image: linear-gradient(to top right, hsl(var(--background)), hsl(var(--muted)));
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
