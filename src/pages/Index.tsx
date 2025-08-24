@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Feather } from "lucide-react";
+import { Instagram, Feather, Pen, Book, Droplet } from "lucide-react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import PoemCard from "@/components/PoemCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -20,9 +20,11 @@ const Index = () => {
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="flex items-center space-x-3 text-primary">
             <img src="/logo.jpeg" alt="Anu's Logo" className="w-8 h-8 rounded-full" />
+            <Feather className="w-6 h-6 text-foreground" />
             <span className="text-2xl font-bold text-foreground">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
+            <a href="#home" className="hover:text-primary transition-colors">Home</a>
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#poems-section" className="hover:text-primary transition-colors">Poems</a>
             <a href="#contact-section" className="hover:text-primary transition-colors">Contact</a>
@@ -37,8 +39,12 @@ const Index = () => {
       <main>
         {/* Hero Section */}
         <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
-          <Feather className="absolute top-1/4 right-1/4 w-16 h-16 text-primary/30 animate-float opacity-50" />
-          <Feather className="absolute bottom-1/4 left-1/4 w-12 h-12 text-secondary/30 animate-float [animation-delay:-2s] opacity-50" />
+          {/* Floating Icons */}
+          <Feather className="absolute top-1/4 right-1/4 w-16 h-16 text-primary/30 animate-float opacity-50 transition-transform hover:scale-125" />
+          <Pen className="absolute top-1/2 left-1/4 w-12 h-12 text-secondary/30 animate-float [animation-delay:-1s] opacity-50 transition-transform hover:scale-125" />
+          <Book className="absolute bottom-1/4 right-1/3 w-14 h-14 text-accent/30 animate-float [animation-delay:-2s] opacity-50 transition-transform hover:scale-125" />
+          <Droplet className="absolute bottom-1/3 left-1/3 w-10 h-10 text-primary/20 animate-float [animation-delay:-3s] opacity-50 transition-transform hover:scale-125" />
+          
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
             Welcome to ANUVIN VARIGAL
           </h1>
@@ -53,11 +59,11 @@ const Index = () => {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 bg-card/50 border-t border-b border-border">
-          <div className="container mx-auto px-6 grid md:grid-cols-1 gap-12 items-center">
-            <div className="text-center">
+        <section id="about" className="py-20 author-bg">
+          <div className="relative container mx-auto px-6 grid md:grid-cols-1 gap-12 items-center">
+            <div className="text-center bg-card/80 backdrop-blur-sm p-8 rounded-lg">
               <h2 className="text-4xl font-bold mb-6 text-foreground">About the Author</h2>
-              <img src="/logo.jpeg" alt="Author Anu" className="w-32 h-32 rounded-full mx-auto mb-6 object-cover" />
+              <img src="/logo.jpeg" alt="Author Anu" className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-primary/50" />
               <p className="text-2xl font-semibold mb-2 text-primary">Anu</p>
               <p className="text-lg mb-4 text-muted-foreground">2nd Year, B.Tech Cyber Security</p>
               <div className="flex justify-center items-start space-x-3 my-6">

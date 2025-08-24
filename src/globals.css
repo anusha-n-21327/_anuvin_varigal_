@@ -153,4 +153,22 @@
   .animate-float {
     animation: float 4s ease-in-out infinite;
   }
+
+  .author-bg {
+    background-image: url('/quill-image.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .author-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsla(var(--card), 0.8);
+    backdrop-filter: blur(4px);
+  }
 }
