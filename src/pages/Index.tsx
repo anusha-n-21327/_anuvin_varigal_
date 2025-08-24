@@ -13,14 +13,14 @@ const poems = [
 
 const Index = () => {
   return (
-    <div className="w-full min-h-screen font-serif text-foreground bg-background">
+    <div className="w-full min-h-screen text-foreground bg-background">
       <FloatingIcons />
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="flex items-center space-x-3 text-primary">
             <Feather className="w-8 h-8 text-foreground" />
-            <span className="text-2xl font-bold text-foreground">ANUVIN VARIGAL</span>
+            <span className="text-2xl font-bold text-foreground font-serif">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
             <a href="#home" className="hover:text-primary transition-colors">Home</a>
@@ -59,7 +59,7 @@ const Index = () => {
               <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center bg-primary/10 border-4 border-primary/50">
                 <Feather className="w-16 h-16 text-primary" />
               </div>
-              <p className="text-2xl font-semibold mb-2 text-primary">Anu</p>
+              <p className="text-2xl font-semibold mb-2 text-primary font-serif">Anu</p>
               <p className="text-lg mb-4 text-muted-foreground">2nd Year, B.Tech Cyber Security</p>
               <div className="flex justify-center items-start space-x-3 my-6">
                   <p className="text-lg italic max-w-md text-foreground">
