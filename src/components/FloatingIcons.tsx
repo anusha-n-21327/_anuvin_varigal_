@@ -1,4 +1,4 @@
-import { ScrollText, Feather, Pen, Droplets, Stamp, FileText } from "lucide-react";
+import { ScrollText, Feather, Pen, Droplets, Stamp, FileText, BookOpen } from "lucide-react";
 
 const iconClasses = "absolute text-primary/20 animate-float opacity-50 transition-all duration-500 ease-in-out hover:scale-150 hover:opacity-80 hover:-translate-y-6 hover:rotate-[15deg]";
 
@@ -21,6 +21,13 @@ export const FloatingIcons = () => {
       <ScrollText className={`${iconClasses} top-[40%] left-[40%] w-10 h-10 [animation-delay:-6.5s]`} />
       <Stamp className={`${iconClasses} bottom-[40%] right-[5%] w-14 h-14 [animation-delay:-7s] text-accent/20`} />
       <Pen className={`${iconClasses} top-[75%] right-[25%] w-12 h-12 [animation-delay:-7.5s]`} />
+
+      {/* New Icons */}
+      <BookOpen className={`${iconClasses} top-[25%] left-[25%] w-14 h-14 [animation-delay:-8s]`} />
+      <BookOpen className={`${iconClasses} bottom-[15%] right-[45%] w-12 h-12 [animation-delay:-9s] text-secondary/20`} />
+      <Pen className={`${iconClasses} bottom-[5%] right-[30%] w-10 h-10 [animation-delay:-8.5s]`} />
+      <Droplets className={`${iconClasses} top-[5%] left-[40%] w-12 h-12 [animation-delay:-9.5s] text-accent/20`} />
+      <BookOpen className={`${iconClasses} top-[80%] left-[10%] w-16 h-16 [animation-delay:-10s]`} />
     </div>
   );
 };
