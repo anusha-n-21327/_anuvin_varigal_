@@ -1,19 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, BookText } from "lucide-react"; // Removed LogOut
-import { Link, useNavigate } from "react-router-dom";
+import { Instagram, BookText } from "lucide-react";
+import { Link } from "react-router-dom";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-// Removed useAuth and LoginDialog imports
-// Removed showSuccess, showError as they were related to auth toasts
+import PoemCard from "@/components/PoemCard"; // Import PoemCard
+
+const poems = [
+  "எனக்கும் அவளுக்குமான உறவு,\nஎனை மறந்து ஒன்றில் ஆழ்ந்துபோகையிலே...\nஏதோ ஓர் உருவத்தில் \nஎனை வந்தடைந்து விடுகிறாள்.....\nதமிழ்!!!",
+  "செயற்கையாய் செயல்படாதே....\nஇயற்கையாய் இயங்க கற்றுக்கொள்!",
+  "வேரின் வியர்வை தான் மலரின் ஒளி!\nஇருப்பினும்,\nவேரோடு மலர் இணைவதில்லை...\nமலரோடு வேர் இணைவதில்லை..",
+  "நட்சத்திரங்களின் நிசப்தம் அவள்!\nகூச்சலின்றி மின்னுகிறாள்....",
+];
 
 const Index = () => {
-  const navigate = useNavigate();
-
-  const handleReadPoemsClick = () => {
-    navigate("/poems"); // Directly navigate to poems page
-  };
-
   return (
-    <div className="w-full min-h-screen font-serif text-foreground">
+    <div className="w-full min-h-screen font-serif text-foreground bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -23,8 +23,7 @@ const Index = () => {
           </a>
           <div className="hidden md:flex items-center space-x-6">
             <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <Link to="/poems" className="hover:text-primary transition-colors">Poems</Link>
-            {/* Removed Sign In/Sign Out buttons */}
+            <a href="#poems-section" className="hover:text-primary transition-colors">Poems</a> {/* Link to new poems section */}
           </div>
         </nav>
       </header>
@@ -38,9 +37,11 @@ const Index = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-muted-foreground">
             where words and emotions meet.
           </p>
-          <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground" onClick={handleReadPoemsClick}>
-            Read my poems
-          </Button>
+          <a href="#poems-section"> {/* Changed to anchor link for smooth scroll */}
+            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground">
+              Read my poems
+            </Button>
+          </a>
         </section>
 
         {/* About Section */}
@@ -55,6 +56,18 @@ const Index = () => {
                   "I write to heal, to connect, and to make a momento for the emotions..."
                   </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Poems Section - New! */}
+        <section id="poems-section" className="py-20 bg-card/50 border-t border-b border-border">
+          <div className="max-w-5xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">Anu's Poems</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
+              {poems.map((poem, index) => (
+                <PoemCard key={index} poem={poem} />
+              ))}
             </div>
           </div>
         </section>

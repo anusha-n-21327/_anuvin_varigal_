@@ -4,48 +4,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Pure white background */
-    --foreground: 220 10% 20%; /* Dark grey for text */
-    --card: 0 0% 100%; /* White card background */
-    --card-foreground: 220 10% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 20%;
-    --primary: 210 40% 45%; /* Muted blue for primary accent */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
-    --secondary: 220 10% 95%; /* Very light grey for secondary elements */
-    --secondary-foreground: 220 10% 20%; /* Dark text on secondary */
-    --muted: 220 10% 90%; /* Light grey for muted elements */
-    --muted-foreground: 220 10% 40%;
+    --background: 240 10% 3.9%; /* Deep dark background */
+    --foreground: 210 20% 98%; /* Light, almost white text */
+    --card: 240 10% 5%; /* Slightly lighter dark for cards */
+    --card-foreground: 210 20% 98%;
+    --popover: 240 10% 5%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 262 83% 58%; /* Deep purple for primary accent */
+    --primary-foreground: 210 20% 98%; /* Light text on primary */
+    --secondary: 217 32% 27%; /* Muted blue-grey for secondary elements */
+    --secondary-foreground: 210 20% 98%; /* Light text on secondary */
+    --muted: 240 10% 10%; /* Dark grey for muted elements */
+    --muted-foreground: 215 20.2% 65.1%;
     --accent: 210 40% 60%; /* Slightly lighter blue for accent */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --accent-foreground: 210 20% 98%; /* Light text on accent */
     --destructive: 0 80% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 85%; /* Light grey border */
-    --input: 220 10% 97%; /* Very light grey input background */
-    --ring: 210 40% 45%; /* Primary blue for ring */
+    --destructive-foreground: 210 20% 98%;
+    --border: 240 10% 15%; /* Darker border */
+    --input: 240 10% 10%; /* Dark input background */
+    --ring: 262 83% 58%; /* Primary purple for ring */
     --radius: 0.5rem;
   }
 
+  /* The dark theme is now the default, so the .dark class will mirror it */
   .dark {
-    --background: 0 0% 100%;
-    --foreground: 220 10% 20%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 10% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 20%;
-    --primary: 210 40% 45%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 10% 95%;
-    --secondary-foreground: 220 10% 20%;
-    --muted: 220 10% 90%;
-    --muted-foreground: 220 10% 40%;
+    --background: 240 10% 3.9%;
+    --foreground: 210 20% 98%;
+    --card: 240 10% 5%;
+    --card-foreground: 210 20% 98%;
+    --popover: 240 10% 5%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 217 32% 27%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 240 10% 10%;
+    --muted-foreground: 215 20.2% 65.1%;
     --accent: 210 40% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 210 20% 98%;
     --destructive: 0 80% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 10% 85%;
-    --input: 220 10% 97%;
-    --ring: 210 40% 45%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 240 10% 15%;
+    --input: 240 10% 10%;
+    --ring: 262 83% 58%;
   }
 }
 
@@ -58,11 +59,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Removed textured background */
-    background-image: none;
+    background-image: none; /* Ensure no textured background */
   }
-}
-
-@layer utilities {
-  /* Removed glow-container styles */
 }

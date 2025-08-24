@@ -12,6 +12,7 @@ const PoemCard = ({ poem }: PoemCardProps) => {
     <div
       className="group w-full h-64 [perspective:1000px]"
       onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)} // Added onMouseLeave to flip back
     >
       <div
         className={cn(
@@ -20,12 +21,12 @@ const PoemCard = ({ poem }: PoemCardProps) => {
         )}
       >
         {/* Front of the card */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] bg-card border-2 border-border rounded-lg shadow-md flex items-center justify-center p-4 cursor-pointer transition-shadow group-hover:shadow-lg"> {/* Updated colors and shadow */}
+        <div className="absolute w-full h-full [backface-visibility:hidden] bg-card border-2 border-border rounded-lg shadow-lg flex items-center justify-center p-4 cursor-pointer transition-shadow group-hover:shadow-primary/40 group-hover:shadow-2xl">
           <p className="text-lg font-semibold text-foreground">Reveal the Poem</p>
         </div>
 
         {/* Back of the card */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card border-2 border-primary/30 rounded-lg shadow-md flex items-center justify-center p-6 cursor-pointer"> {/* Updated colors and shadow */}
+        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card border-2 border-primary/30 rounded-lg shadow-lg flex items-center justify-center p-6 cursor-pointer">
           <p className="text-center whitespace-pre-line text-base md:text-lg leading-relaxed text-foreground">
             {poem}
           </p>
