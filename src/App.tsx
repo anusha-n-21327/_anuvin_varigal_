@@ -13,7 +13,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider
       attribute="class"
-      defaultTheme="whispers-of-ink"
+      defaultTheme="poetic"
       enableSystem={false}
       storageKey="anu-theme"
     >
