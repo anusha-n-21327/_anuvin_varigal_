@@ -4,49 +4,48 @@
 
 @layer base {
   :root {
-    --background: 330 60% 98%; /* Very light pink for paper background */
+    --background: 0 0% 100%; /* Pure white background */
     --foreground: 220 10% 20%; /* Dark grey for text */
     --card: 0 0% 100%; /* White card background */
     --card-foreground: 220 10% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 10% 20%;
-    --primary: 270 70% 50%; /* Vibrant purple */
+    --primary: 210 40% 45%; /* Muted blue for primary accent */
     --primary-foreground: 0 0% 100%; /* White text on primary */
-    --secondary: 330 60% 80%; /* Soft pink */
+    --secondary: 220 10% 95%; /* Very light grey for secondary elements */
     --secondary-foreground: 220 10% 20%; /* Dark text on secondary */
     --muted: 220 10% 90%; /* Light grey for muted elements */
     --muted-foreground: 220 10% 40%;
-    --accent: 210 70% 60%; /* Medium blue */
+    --accent: 210 40% 60%; /* Slightly lighter blue for accent */
     --accent-foreground: 0 0% 100%; /* White text on accent */
     --destructive: 0 80% 50%;
     --destructive-foreground: 0 0% 100%;
     --border: 220 10% 85%; /* Light grey border */
-    --input: 220 10% 95%; /* Very light grey input background */
-    --ring: 270 70% 50%; /* Primary purple for ring */
+    --input: 220 10% 97%; /* Very light grey input background */
+    --ring: 210 40% 45%; /* Primary blue for ring */
     --radius: 0.5rem;
   }
 
-  /* Since a light theme is requested, the 'dark' class will mirror the light theme for consistency */
   .dark {
-    --background: 330 60% 98%;
+    --background: 0 0% 100%;
     --foreground: 220 10% 20%;
     --card: 0 0% 100%;
     --card-foreground: 220 10% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 10% 20%;
-    --primary: 270 70% 50%;
+    --primary: 210 40% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 330 60% 80%;
+    --secondary: 220 10% 95%;
     --secondary-foreground: 220 10% 20%;
     --muted: 220 10% 90%;
     --muted-foreground: 220 10% 40%;
-    --accent: 210 70% 60%;
+    --accent: 210 40% 60%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 80% 50%;
     --destructive-foreground: 0 0% 100%;
     --border: 220 10% 85%;
-    --input: 220 10% 95%;
-    --ring: 270 70% 50%;
+    --input: 220 10% 97%;
+    --ring: 210 40% 45%;
   }
 }
 
@@ -54,17 +53,16 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth; /* Added smooth scrolling */
+  }
   body {
     @apply bg-background text-foreground;
-    /* Textured pink paper effect */
-    background-color: hsl(var(--background)); /* Base pink color */
-    background-image: 
-      linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%, rgba(0,0,0,0.03) 100%),
-      linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%, rgba(0,0,0,0.03) 100%);
-    background-size: 20px 20px; /* Adjust size for desired texture density */
+    /* Removed textured background */
+    background-image: none;
   }
 }
 
 @layer utilities {
-  /* Removed glow-container styles as they are for a dark theme and no longer fit the new aesthetic. */
+  /* Removed glow-container styles */
 }

@@ -20,13 +20,13 @@ const PoemCard = ({ poem }: PoemCardProps) => {
         )}
       >
         {/* Front of the card */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] bg-card/80 backdrop-blur-sm border-2 border-border rounded-lg shadow-lg flex items-center justify-center p-4 cursor-pointer transition-shadow group-hover:shadow-primary/40 group-hover:shadow-2xl"> {/* Updated colors */}
-          <p className="text-lg font-semibold text-foreground">Reveal the Poem</p> {/* Updated text color */}
+        <div className="absolute w-full h-full [backface-visibility:hidden] bg-card border-2 border-border rounded-lg shadow-md flex items-center justify-center p-4 cursor-pointer transition-shadow group-hover:shadow-lg"> {/* Updated colors and shadow */}
+          <p className="text-lg font-semibold text-foreground">Reveal the Poem</p>
         </div>
 
         {/* Back of the card */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-gradient-to-br from-card to-card/80 backdrop-blur-sm border-2 border-primary/30 rounded-lg shadow-lg flex items-center justify-center p-6 cursor-pointer"> {/* Updated colors */}
-          <p className="text-center whitespace-pre-line text-base md:text-lg leading-relaxed text-foreground"> {/* Updated text color */}
+        <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card border-2 border-primary/30 rounded-lg shadow-md flex items-center justify-center p-6 cursor-pointer"> {/* Updated colors and shadow */}
+          <p className="text-center whitespace-pre-line text-base md:text-lg leading-relaxed text-foreground">
             {poem}
           </p>
         </div>
