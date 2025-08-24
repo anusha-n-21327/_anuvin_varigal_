@@ -27,95 +27,27 @@
     --radius: 0.5rem;
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 210 20% 98%;
-    --card: 240 10% 5%;
-    --card-foreground: 210 20% 98%;
-    --popover: 240 10% 5%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 262 83% 58%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 217 32% 27%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 240 10% 10%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 210 40% 60%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 80% 50%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 240 10% 15%;
-    --input: 240 10% 10%;
-    --ring: 262 83% 58%;
-  }
-
-  /* Mystic Glow Theme */
-  .mystic-glow {
-    --background: 210 100% 96%; /* Light Sky Blue */
-    --foreground: 250 30% 25%; /* Deep Muted Purple */
-    --card: 270 80% 97%; /* Light Lavender */
-    --card-foreground: 250 30% 25%;
-    --popover: 270 80% 97%; /* Light Lavender */
-    --popover-foreground: 250 30% 25%;
-    --primary: 270 80% 65%; /* Vibrant Lavender */
-    --primary-foreground: 210 100% 98%;
-    --secondary: 330 100% 90%; /* Soft Pink */
-    --secondary-foreground: 330 50% 30%;
-    --muted: 270 50% 94%;
-    --muted-foreground: 250 20% 45%;
-    --accent: 320 100% 75%; /* Bright Pink */
-    --accent-foreground: 250 30% 15%;
-    --destructive: 0 80% 60%;
+  /* NEW: Ethereal Quill Theme */
+  .ethereal-quill {
+    --background: 255 80% 98%; /* Light Lavender */
+    --foreground: 260 30% 25%; /* Dark Muted Purple */
+    --card: 340 60% 99%; /* Hint of Rose White */
+    --card-foreground: 260 30% 25%;
+    --popover: 340 60% 99%;
+    --popover-foreground: 260 30% 25%;
+    --primary: 45 80% 60%; /* Soft Gold */
+    --primary-foreground: 35 50% 20%;
+    --secondary: 220 70% 90%; /* Moonlit Blue */
+    --secondary-foreground: 220 30% 30%;
+    --muted: 255 50% 94%;
+    --muted-foreground: 260 20% 45%;
+    --accent: 330 80% 85%; /* Soft Rose */
+    --accent-foreground: 330 40% 15%;
+    --destructive: 0 70% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 270 50% 85%; /* Light Purple Border */
-    --input: 270 50% 96%;
-    --ring: 270 80% 65%;
-  }
-
-  /* Moonlit Verses Theme */
-  .moonlit-verses {
-    --background: 240 30% 10%; /* Deep night blue */
-    --foreground: 240 10% 85%; /* Soft moonlight */
-    --card: 240 30% 15%; /* Slightly lighter night blue */
-    --card-foreground: 240 10% 85%;
-    --popover: 240 30% 12%;
-    --popover-foreground: 240 10% 85%;
-    --primary: 260 80% 70%; /* Mystical lavender/indigo */
-    --primary-foreground: 260 50% 10%; /* Dark contrast for primary */
-    --secondary: 240 20% 30%; /* Muted blue-grey */
-    --secondary-foreground: 240 10% 90%;
-    --muted: 240 20% 20%;
-    --muted-foreground: 240 10% 60%;
-    --accent: 220 60% 80%; /* Shimmering silver-blue */
-    --accent-foreground: 240 30% 10%;
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 240 30% 25%; /* Subtle border */
-    --input: 240 30% 20%;
-    --ring: 260 80% 70%;
-  }
-
-  /* NEW: Sandalwood Theme */
-  .sandalwood {
-    --background: 35 50% 96%;
-    --foreground: 25 35% 25%;
-    --card: 35 40% 92%;
-    --card-foreground: 25 35% 25%;
-    --popover: 35 40% 92%;
-    --popover-foreground: 25 35% 25%;
-    --primary: 25 60% 50%;
-    --primary-foreground: 35 50% 98%;
-    --secondary: 30 40% 70%;
-    --secondary-foreground: 25 35% 25%;
-    --muted: 35 30% 88%;
-    --muted-foreground: 25 25% 45%;
-    --accent: 40 70% 60%;
-    --accent-foreground: 25 35% 15%;
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 35 30% 80%;
-    --input: 35 40% 94%;
-    --ring: 25 60% 50%;
+    --border: 40 50% 90%; /* Creamy Border */
+    --input: 40 50% 95%;
+    --ring: 45 80% 60%;
   }
 }
 
@@ -129,25 +61,12 @@
   body {
     @apply bg-background text-foreground;
   }
-  .moonlit-verses body {
-    background: radial-gradient(ellipse at center, hsl(240, 30%, 18%), hsl(var(--background)));
-  }
-  .mystic-glow body {
+  .ethereal-quill body {
     background: linear-gradient(
       -45deg,
-      hsl(210, 100%, 92%),
-      hsl(270, 100%, 92%),
-      hsl(330, 100%, 92%)
-    );
-    background-size: 400% 400%;
-    animation: animated-gradient 15s ease infinite;
-  }
-  .sandalwood body {
-    background: linear-gradient(
-      -45deg,
-      hsl(35, 50%, 92%),
-      hsl(25, 50%, 90%),
-      hsl(35, 40%, 94%)
+      hsl(255, 80%, 96%), /* Lavender */
+      hsl(330, 80%, 96%), /* Rose */
+      hsl(220, 80%, 96%)  /* Moonlit Blue */
     );
     background-size: 400% 400%;
     animation: animated-gradient 15s ease infinite;
@@ -159,40 +78,29 @@
 
 @layer utilities {
   @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
+    0% { transform: translateY(0px) rotate(-2deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(-2deg); }
   }
 
   @keyframes glow {
-    0%, 100% {
-      filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.6));
-    }
-    50% {
-      filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.8));
-    }
+    0%, 100% { filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.6)); }
+    50% { filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.8)); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.2), 0 0 8px hsl(var(--accent) / 0.2); }
+    50% { box-shadow: 0 0 35px hsl(var(--primary) / 0.4), 0 0 12px hsl(var(--accent) / 0.4); }
   }
 
   @keyframes animated-gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   .animate-float {
-    animation: float 4s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
   }
   
   .animate-glow {
@@ -200,10 +108,7 @@
   }
 
   .card-glow {
-    transition: box-shadow 0.4s ease-in-out;
-  }
-  .card-glow:hover {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+    animation: pulse-glow 5s ease-in-out infinite;
   }
 
   .author-bg {

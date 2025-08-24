@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Feather } from "lucide-react";
+import { Instagram, Feather, ScrollText } from "lucide-react";
 import PoemCard from "@/components/PoemCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FloatingIcons } from "@/components/FloatingIcons";
 import MobileNav from "@/components/MobileNav";
+import { useFadeIn } from "@/hooks/useFadeIn";
+import { cn } from "@/lib/utils";
 
 const poems = [
   "எனக்கும் அவளுக்குமான உறவு,\nஎனை மறந்து ஒன்றில் ஆழ்ந்துபோகையிலே...\nஏதோ ஓர் உருவத்தில் \nஎனை வந்தடைந்து விடுகிறாள்.....\nதமிழ்!!!",
@@ -11,6 +13,23 @@ const poems = [
   "வேரின் வியர்வை தான் மலரின் ஒளி!\nஇருப்பினும்,\nவேரோடு மலர் இணைவதில்லை...\nமலரோடு வேர் இணைவதில்லை..",
   "நட்சத்திரங்களின் நிசப்தம் அவள்!\nகூச்சலின்றி மின்னுகிறாள்....",
 ];
+
+const FadeInSection = ({ children, className, id }: { children: React.ReactNode, className?: string, id: string }) => {
+  const { ref, isVisible } = useFadeIn<HTMLElement>();
+  return (
+    <section
+      id={id}
+      ref={ref}
+      className={cn(
+        "transition-all duration-1000 ease-in-out transform",
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10",
+        className
+      )}
+    >
+      {children}
+    </section>
+  );
+};
 
 const Index = () => {
   return (
@@ -38,7 +57,10 @@ const Index = () => {
       <main>
         {/* Hero Section */}
         <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
-          <Feather className="absolute text-primary/10 w-72 h-72 md:w-96 md:h-96 animate-glow opacity-50 -z-10" />
+          <div className="absolute -z-10 opacity-20">
+            <ScrollText className="text-primary w-48 h-48 md:w-64 md:h-64 animate-glow [animation-delay:-2s]" />
+            <Feather className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-accent w-72 h-72 md:w-96 md:h-96 animate-glow" />
+          </div>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
             Welcome to ANUVIN VARIGAL
           </h1>
@@ -53,7 +75,7 @@ const Index = () => {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 author-bg">
+        <FadeInSection id="about" className="py-20 author-bg">
           <div className="relative container mx-auto px-6 grid md:grid-cols-1 gap-12 items-center">
             <div className="text-center bg-card/80 backdrop-blur-sm p-8 rounded-lg">
               <h2 className="text-4xl font-bold mb-6 text-foreground">About the Author</h2>
@@ -69,10 +91,10 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* Poems Section */}
-        <section id="poems-section" className="py-20 bg-card/50 border-t border-b border-border">
+        <FadeInSection id="poems-section" className="py-20 bg-card/50 border-t border-b border-border">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">Anu's Poems</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
@@ -81,10 +103,10 @@ const Index = () => {
               ))}
             </div>
           </div>
-        </section>
+        </FadeInSection>
 
         {/* Contact Section */}
-        <section id="contact-section" className="py-20">
+        <FadeInSection id="contact-section" className="py-20">
           <div className="container mx-auto px-6 text-center">
             <Card className="max-w-lg mx-auto bg-card/80 backdrop-blur-sm border-primary/20 shadow-xl card-glow">
               <CardHeader>
@@ -102,7 +124,7 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-        </section>
+        </FadeInSection>
       </main>
 
       {/* Footer */}
