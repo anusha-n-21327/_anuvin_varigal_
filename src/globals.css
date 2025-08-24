@@ -118,7 +118,7 @@
     --ring: 270 60% 65%;
   }
 
-  /* NEW: Whispers of Ink Theme */
+  /* Whispers of Ink Theme */
   .whispers-of-ink {
     --background: 39 56% 95%; /* Parchment */
     --foreground: 240 5% 25%; /* Soft Ink Black */
@@ -140,6 +140,29 @@
     --input: 39 30% 92%; /* Parchment Input */
     --ring: 220 40% 30%;
   }
+
+  /* NEW: Moonlit Verses Theme */
+  .moonlit-verses {
+    --background: 240 30% 10%; /* Deep night blue */
+    --foreground: 240 10% 85%; /* Soft moonlight */
+    --card: 240 30% 15%; /* Slightly lighter night blue */
+    --card-foreground: 240 10% 85%;
+    --popover: 240 30% 12%;
+    --popover-foreground: 240 10% 85%;
+    --primary: 260 80% 70%; /* Mystical lavender/indigo */
+    --primary-foreground: 260 50% 10%; /* Dark contrast for primary */
+    --secondary: 240 20% 30%; /* Muted blue-grey */
+    --secondary-foreground: 240 10% 90%;
+    --muted: 240 20% 20%;
+    --muted-foreground: 240 10% 60%;
+    --accent: 220 60% 80%; /* Shimmering silver-blue */
+    --accent-foreground: 240 30% 10%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 30% 25%; /* Subtle border */
+    --input: 240 30% 20%;
+    --ring: 260 80% 70%;
+  }
 }
 
 @layer base {
@@ -157,6 +180,9 @@
   }
   .whispers-of-ink body {
     background-image: linear-gradient(to top right, hsl(var(--background)), hsl(var(--muted)));
+  }
+  .moonlit-verses body {
+    background: radial-gradient(ellipse at center, hsl(240, 30%, 18%), hsl(var(--background)));
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
