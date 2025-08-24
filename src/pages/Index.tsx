@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Feather } from "lucide-react";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import PoemCard from "@/components/PoemCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FloatingIcons } from "@/components/FloatingIcons";
@@ -112,7 +111,9 @@ const Index = () => {
             <Instagram className="h-5 w-5" />
             <span>anuvin_varigal</span>
           </a>
-           <MadeWithDyad />
+          <p className="text-sm mt-6">
+            &copy; {new Date().getFullYear()} Anuvin Varigal. All rights reserved by Anusha.
+          </p>
         </div>
       </footer>
     </div>
