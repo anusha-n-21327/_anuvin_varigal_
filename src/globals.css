@@ -3,30 +3,30 @@
 @tailwind utilities;
 
 @layer base {
+  /* Default Theme: Dark & Mystical */
   :root {
-    --background: 240 10% 3.9%; /* Deep dark background */
-    --foreground: 210 20% 98%; /* Light, almost white text */
-    --card: 240 10% 5%; /* Slightly lighter dark for cards */
+    --background: 240 10% 3.9%;
+    --foreground: 210 20% 98%;
+    --card: 240 10% 5%;
     --card-foreground: 210 20% 98%;
     --popover: 240 10% 5%;
     --popover-foreground: 210 20% 98%;
-    --primary: 262 83% 58%; /* Deep purple for primary accent */
-    --primary-foreground: 210 20% 98%; /* Light text on primary */
-    --secondary: 217 32% 27%; /* Muted blue-grey for secondary elements */
-    --secondary-foreground: 210 20% 98%; /* Light text on secondary */
-    --muted: 240 10% 10%; /* Dark grey for muted elements */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 217 32% 27%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 240 10% 10%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 210 40% 60%; /* Slightly lighter blue for accent */
-    --accent-foreground: 210 20% 98%; /* Light text on accent */
+    --accent: 210 40% 60%;
+    --accent-foreground: 210 20% 98%;
     --destructive: 0 80% 50%;
     --destructive-foreground: 210 20% 98%;
-    --border: 240 10% 15%; /* Darker border */
-    --input: 240 10% 10%; /* Dark input background */
-    --ring: 262 83% 58%; /* Primary purple for ring */
+    --border: 240 10% 15%;
+    --input: 240 10% 10%;
+    --ring: 262 83% 58%;
     --radius: 0.5rem;
   }
 
-  /* The dark theme is now the default, so the .dark class will mirror it */
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 210 20% 98%;
@@ -48,6 +48,52 @@
     --input: 240 10% 10%;
     --ring: 262 83% 58%;
   }
+
+  /* Nature-inspired Theme */
+  .nature {
+    --background: 120 15% 95%;
+    --foreground: 120 25% 15%;
+    --card: 120 10% 100%;
+    --card-foreground: 120 25% 15%;
+    --popover: 120 10% 100%;
+    --popover-foreground: 120 25% 15%;
+    --primary: 140 60% 40%;
+    --primary-foreground: 120 25% 98%;
+    --secondary: 40 50% 80%;
+    --secondary-foreground: 40 25% 20%;
+    --muted: 120 10% 90%;
+    --muted-foreground: 120 20% 45%;
+    --accent: 190 70% 60%;
+    --accent-foreground: 190 25% 15%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 120 10% 85%;
+    --input: 120 10% 97%;
+    --ring: 140 60% 40%;
+  }
+
+  /* Artistic & Creative Theme */
+  .artistic {
+    --background: 45 80% 96%;
+    --foreground: 20 15% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 15% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 15% 25%;
+    --primary: 330 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 80% 70%;
+    --secondary-foreground: 200 25% 15%;
+    --muted: 45 50% 90%;
+    --muted-foreground: 20 15% 45%;
+    --accent: 50 100% 60%;
+    --accent-foreground: 50 25% 15%;
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 10% 85%;
+    --input: 45 50% 92%;
+    --ring: 330 80% 60%;
+  }
 }
 
 @layer base {
@@ -55,10 +101,10 @@
     @apply border-border;
   }
   html {
-    scroll-behavior: smooth; /* Added smooth scrolling */
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground;
-    background-image: none; /* Ensure no textured background */
+    background-image: none;
   }
 }
