@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Feather, Flower2 } from "lucide-react";
+import { Instagram, Feather, ScrollText, Pen } from "lucide-react";
 import PoemCard from "@/components/PoemCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FloatingIcons } from "@/components/FloatingIcons";
@@ -43,10 +43,10 @@ const Index = () => {
             <span className="text-2xl font-bold text-foreground font-serif">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#home" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Home</a>
-            <a href="#about" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">About</a>
-            <a href="#poems-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Poems</a>
-            <a href="#contact-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Contact</a>
+            <a href="#home" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">Home</a>
+            <a href="#about" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">About</a>
+            <a href="#poems-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">Poems</a>
+            <a href="#contact-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">Contact</a>
           </div>
           <div className="md:hidden">
             <MobileNav />
@@ -57,9 +57,9 @@ const Index = () => {
       <main>
         {/* Hero Section */}
         <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
-          <div className="absolute -z-10 opacity-20">
-            <Flower2 className="text-primary w-64 h-64 md:w-96 md:h-96 animate-glow [animation-delay:-2s]" />
-            <Feather className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-accent w-72 h-72 md:w-[28rem] md:h-[28rem] animate-glow" />
+          <div className="absolute -z-10 opacity-20 flex items-center justify-center">
+            <ScrollText className="text-primary w-64 h-64 md:w-96 md:h-96 animate-glow" />
+            <Pen className="absolute text-accent w-32 h-32 md:w-48 md:h-48 animate-glow [animation-delay:-2s] -rotate-45" />
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
             Welcome to ANUVIN VARIGAL
