@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, BookText } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
-import PoemCard from "@/components/PoemCard"; // Import PoemCard
+import PoemCard from "@/components/PoemCard";
+import { ThemeToggle } from "@/components/ThemeToggle"; // Import ThemeToggle
 
 const poems = [
   "எனக்கும் அவளுக்குமான உறவு,\nஎனை மறந்து ஒன்றில் ஆழ்ந்துபோகையிலே...\nஏதோ ஓர் உருவத்தில் \nஎனை வந்தடைந்து விடுகிறாள்.....\nதமிழ்!!!",
@@ -18,12 +18,17 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="flex items-center space-x-3 text-primary">
-            <BookText className="w-6 h-6" />
+            <img src="/logo.jpeg" alt="Anu's Logo" className="w-8 h-8 rounded-full" /> {/* Header Icon */}
             <span className="text-2xl font-bold text-foreground">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
             <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#poems-section" className="hover:text-primary transition-colors">Poems</a> {/* Link to new poems section */}
+            <a href="#poems-section" className="hover:text-primary transition-colors">Poems</a>
+            <a href="https://www.instagram.com/anuvin_varigal" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Contact</a> {/* Contact Link */}
+            <ThemeToggle /> {/* Theme Toggle */}
+          </div>
+          <div className="md:hidden">
+            <ThemeToggle /> {/* Theme Toggle for mobile */}
           </div>
         </nav>
       </header>
@@ -37,7 +42,7 @@ const Index = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-muted-foreground">
             where words and emotions meet.
           </p>
-          <a href="#poems-section"> {/* Changed to anchor link for smooth scroll */}
+          <a href="#poems-section">
             <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground">
               Read my poems
             </Button>
@@ -49,6 +54,7 @@ const Index = () => {
           <div className="container mx-auto px-6 grid md:grid-cols-1 gap-12 items-center">
             <div className="text-center">
               <h2 className="text-4xl font-bold mb-6 text-foreground">About the Author</h2>
+              <img src="/logo.jpeg" alt="Author Anu" className="w-32 h-32 rounded-full mx-auto mb-6 object-cover" /> {/* Author Image */}
               <p className="text-2xl font-semibold mb-2 text-primary">Anu</p>
               <p className="text-lg mb-4 text-muted-foreground">2nd Year, B.Tech Cyber Security</p>
               <div className="flex justify-center items-start space-x-3 my-6">
@@ -60,7 +66,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Poems Section - New! */}
+        {/* Poems Section */}
         <section id="poems-section" className="py-20 bg-card/50 border-t border-b border-border">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">Anu's Poems</h2>
