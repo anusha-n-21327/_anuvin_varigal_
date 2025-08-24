@@ -29,7 +29,6 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 bg-slate-900/50 backdrop-blur-sm z-50">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="flex items-center space-x-3">
-            <img src="/logo.jpeg" alt="Anuvin Varigal Logo" className="h-12 w-12 rounded-full object-cover border-2 border-slate-600" />
             <span className="text-2xl font-bold text-white">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
@@ -69,7 +68,6 @@ const Index = () => {
               <p className="text-2xl font-semibold mb-2 text-violet-400">Anu</p>
               <p className="text-lg mb-4 text-slate-400">2nd Year, B.Tech Cyber Security</p>
               <div className="flex justify-center md:justify-start items-start space-x-3 my-6">
-                  <Feather className="w-8 h-8 mt-1 flex-shrink-0 text-violet-400" />
                   <p className="text-lg italic max-w-md text-slate-300">
                   "I write to heal, to connect, and to make a momento for the emotions..."
                   </p>
