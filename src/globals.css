@@ -52,24 +52,24 @@
 
   /* NEW: Petals of Poetry Theme */
   .petals-of-poetry {
-    --background: 30 100% 99%; /* Cream */
+    --background: 35 55% 95%; /* Light Sandalwood */
     --foreground: 30 40% 20%; /* Earthy Brown */
-    --card: 350 100% 98%; /* Blush Pink */
+    --card: 35 40% 97%; /* Lighter Sandalwood */
     --card-foreground: 30 40% 20%;
-    --popover: 350 100% 98%;
+    --popover: 35 40% 97%;
     --popover-foreground: 30 40% 20%;
     --primary: 290 60% 80%; /* Pink & Purple Orchid */
     --primary-foreground: 30 40% 15%;
     --secondary: 25 100% 95%; /* Peach */
     --secondary-foreground: 25 50% 30%;
-    --muted: 30 50% 95%;
+    --muted: 35 50% 93%; /* Muted Sandalwood */
     --muted-foreground: 30 30% 40%;
     --accent: 255 80% 96%; /* Lavender */
     --accent-foreground: 255 40% 25%;
     --destructive: 0 70% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 90 30% 88%; /* Soft Green */
-    --input: 30 50% 97%;
+    --border: 35 30% 88%; /* Soft Sandalwood Border */
+    --input: 35 40% 97%;
     --ring: 290 60% 80%; /* Pink & Purple Orchid */
   }
 }
@@ -99,9 +99,9 @@
   .petals-of-poetry body {
      background-image: linear-gradient(
       -45deg,
-      hsl(350, 100%, 97%), /* Blush Pink */
-      hsl(25, 100%, 96%),  /* Peach */
-      hsl(255, 100%, 97%)  /* Lavender */
+      hsl(35, 55%, 95%),  /* Light Sandalwood */
+      hsl(30, 60%, 94%),  /* Warmer Sandalwood */
+      hsl(40, 50%, 96%)   /* Paler Sandalwood */
     );
   }
   h1, h2, h3, h4, h5, h6 {
