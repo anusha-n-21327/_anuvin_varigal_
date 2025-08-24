@@ -43,10 +43,10 @@ const Index = () => {
             <span className="text-2xl font-bold text-foreground font-serif">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#home" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">Home</a>
-            <a href="#about" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">About</a>
-            <a href="#poems-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">Poems</a>
-            <a href="#contact-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-all hover:scale-105">Contact</a>
+            <a href="#home" className="px-3 py-2 rounded-md hover:text-primary hover-glow">Home</a>
+            <a href="#about" className="px-3 py-2 rounded-md hover:text-primary hover-glow">About</a>
+            <a href="#poems-section" className="px-3 py-2 rounded-md hover:text-primary hover-glow">Poems</a>
+            <a href="#contact-section" className="px-3 py-2 rounded-md hover:text-primary hover-glow">Contact</a>
           </div>
           <div className="md:hidden">
             <MobileNav />
@@ -61,14 +61,14 @@ const Index = () => {
             <ScrollText className="text-primary w-64 h-64 md:w-96 md:h-96 animate-glow" />
             <Pen className="absolute text-accent w-32 h-32 md:w-48 md:h-48 animate-glow [animation-delay:-2s] -rotate-45" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground animate-title">
             Welcome to ANUVIN VARIGAL
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-muted-foreground">
             Where words and emotions meet.
           </p>
           <a href="#poems-section">
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground hover-glow">
               Read my poems
             </Button>
           </a>
@@ -117,7 +117,7 @@ const Index = () => {
                   Follow my journey and get your daily dose of poetry on Instagram.
                 </p>
                 <a href="https://www.instagram.com/anuvin_varigal" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+                  <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground hover-glow">
                     <Instagram className="mr-2 h-5 w-5" /> Follow @anuvin_varigal
                   </Button>
                 </a>
@@ -131,7 +131,7 @@ const Index = () => {
       <footer className="py-10 bg-card/50 border-t border-border">
         <div className="container mx-auto px-6 text-center text-muted-foreground">
           <p className="text-lg italic mb-4">"Poetry is the language of the soul..."</p>
-          <a href="https://www.instagram.com/anuvin_varigal" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 hover:text-primary">
+          <a href="https://www.instagram.com/anuvin_varigal" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 hover:text-primary hover-glow">
             <Instagram className="h-5 w-5" />
             <span>anuvin_varigal</span>
           </a>
