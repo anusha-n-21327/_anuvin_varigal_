@@ -37,6 +37,7 @@ const Index = () => {
       <main>
         {/* Hero Section */}
         <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
+          <Feather className="absolute text-primary/10 w-72 h-72 md:w-96 md:h-96 animate-glow opacity-50 -z-10" />
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
             Welcome to ANUVIN VARIGAL
           </h1>
@@ -84,7 +85,7 @@ const Index = () => {
         {/* Contact Section */}
         <section id="contact-section" className="py-20">
           <div className="container mx-auto px-6 text-center">
-            <Card className="max-w-lg mx-auto bg-card/80 backdrop-blur-sm border-primary/20 shadow-xl">
+            <Card className="max-w-lg mx-auto bg-card/80 backdrop-blur-sm border-primary/20 shadow-xl card-glow">
               <CardHeader>
                 <CardTitle className="text-3xl md:text-4xl font-bold text-foreground">Connect with Me</CardTitle>
               </CardHeader>
