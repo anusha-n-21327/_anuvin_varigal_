@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Instagram, Feather, ScrollText, Pen } from "lucide-react";
 import PoemCard from "@/components/PoemCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FloatingIcons } from "@/components/FloatingIcons";
+import ParticleBackground from "@/components/ParticleBackground"; // Import the new component
 import MobileNav from "@/components/MobileNav";
 import { useFadeIn } from "@/hooks/useFadeIn";
 import { cn } from "@/lib/utils";
@@ -34,7 +34,7 @@ const FadeInSection = ({ children, className, id }: { children: React.ReactNode,
 const Index = () => {
   return (
     <div className="w-full min-h-screen text-foreground bg-background">
-      <FloatingIcons />
+      <ParticleBackground /> {/* Use the new ParticleBackground component */}
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
