@@ -49,7 +49,7 @@
     --ring: 262 83% 58%;
   }
 
-  /* NEW: Mystic Glow Theme */
+  /* Mystic Glow Theme */
   .mystic-glow {
     --background: 210 100% 96%; /* Light Sky Blue */
     --foreground: 250 30% 25%; /* Deep Muted Purple */
@@ -94,6 +94,29 @@
     --input: 240 30% 20%;
     --ring: 260 80% 70%;
   }
+
+  /* NEW: Sandalwood Theme */
+  .sandalwood {
+    --background: 35 50% 96%;
+    --foreground: 25 35% 25%;
+    --card: 35 40% 92%;
+    --card-foreground: 25 35% 25%;
+    --popover: 35 40% 92%;
+    --popover-foreground: 25 35% 25%;
+    --primary: 25 60% 50%;
+    --primary-foreground: 35 50% 98%;
+    --secondary: 30 40% 70%;
+    --secondary-foreground: 25 35% 25%;
+    --muted: 35 30% 88%;
+    --muted-foreground: 25 25% 45%;
+    --accent: 40 70% 60%;
+    --accent-foreground: 25 35% 15%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 30% 80%;
+    --input: 35 40% 94%;
+    --ring: 25 60% 50%;
+  }
 }
 
 @layer base {
@@ -115,6 +138,16 @@
       hsl(210, 100%, 92%),
       hsl(270, 100%, 92%),
       hsl(330, 100%, 92%)
+    );
+    background-size: 400% 400%;
+    animation: animated-gradient 15s ease infinite;
+  }
+  .sandalwood body {
+    background: linear-gradient(
+      -45deg,
+      hsl(35, 50%, 92%),
+      hsl(25, 50%, 90%),
+      hsl(35, 40%, 94%)
     );
     background-size: 400% 400%;
     animation: animated-gradient 15s ease infinite;
