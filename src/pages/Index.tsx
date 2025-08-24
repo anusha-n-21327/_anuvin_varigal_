@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Feather, ScrollText } from "lucide-react";
+import { Instagram, Feather, Flower2 } from "lucide-react";
 import PoemCard from "@/components/PoemCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FloatingIcons } from "@/components/FloatingIcons";
@@ -58,8 +58,8 @@ const Index = () => {
         {/* Hero Section */}
         <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
           <div className="absolute -z-10 opacity-20">
-            <ScrollText className="text-primary w-48 h-48 md:w-64 md:h-64 animate-glow [animation-delay:-2s]" />
-            <Feather className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-accent w-72 h-72 md:w-96 md:h-96 animate-glow" />
+            <Flower2 className="text-primary w-64 h-64 md:w-96 md:h-96 animate-glow [animation-delay:-2s]" />
+            <Feather className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-accent w-72 h-72 md:w-[28rem] md:h-[28rem] animate-glow" />
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
             Welcome to ANUVIN VARIGAL
@@ -108,7 +108,7 @@ const Index = () => {
         {/* Contact Section */}
         <FadeInSection id="contact-section" className="py-20">
           <div className="container mx-auto px-6 text-center">
-            <Card className="max-w-lg mx-auto bg-card/80 backdrop-blur-sm border-primary/20 shadow-xl card-glow">
+            <Card className="max-w-lg mx-auto bg-card/80 backdrop-blur-sm border-primary/20 shadow-xl card-glow rounded-t-[3rem] rounded-b-lg">
               <CardHeader>
                 <CardTitle className="text-3xl md:text-4xl font-bold text-foreground">Connect with Me</CardTitle>
               </CardHeader>
@@ -136,7 +136,7 @@ const Index = () => {
             <span>anuvin_varigal</span>
           </a>
           <p className="text-sm mt-6">
-            &copy; {new Date().getFullYear()} Anuvin Varigal. All rights reserved by Anusha.
+            &copy; {newgetFullYear()} Anuvin Varigal. All rights reserved by Anusha.
           </p>
         </div>
       </footer>

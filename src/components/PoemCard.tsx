@@ -1,39 +1,44 @@
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import { Flower2 } from 'lucide-react';
 
 interface PoemCardProps {
   poem: string;
 }
 
 const PoemCard = ({ poem }: PoemCardProps) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isBloomed, setIsBloomed] = useState(false);
 
   const handleCardClick = () => {
-    setIsFlipped(!isFlipped);
+    setIsBloomed(!isBloomed);
   };
 
   return (
     <div
-      className="group w-full h-64 [perspective:1000px] cursor-pointer"
+      className="group w-full h-64 cursor-pointer"
       onClick={handleCardClick}
     >
       <div
         className={cn(
-          'relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]',
-          'ease-[cubic-bezier(0.25,1,0.5,1)]', // Subtle bounce-out effect
-          isFlipped ? '[transform:rotateY(180deg)]' : ''
+          'relative w-full h-full transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]',
+          'flex items-center justify-center p-6 bg-card border-2 border-border rounded-lg shadow-lg',
+          'hover:shadow-primary/30 hover:shadow-2xl hover:border-primary/40',
+          isBloomed ? 'scale-105 shadow-primary/30 shadow-2xl' : 'hover:scale-105'
         )}
       >
-        {/* Front of the card */}
-        <div className="absolute w-full h-full [backface-visibility:hidden] bg-card border-2 border-border rounded-lg shadow-lg flex items-center justify-center p-4 transition-shadow group-hover:shadow-primary/40 group-hover:shadow-2xl">
-          <p className="text-lg font-semibold text-foreground">Click to Reveal Poem</p>
+        {/* Front Content (Icon) */}
+        <div className={cn(
+          "absolute transition-opacity duration-500 flex flex-col items-center text-center",
+          isBloomed ? "opacity-0" : "opacity-100"
+        )}>
+          <Flower2 className="w-12 h-12 text-primary/50 mb-4 transition-transform group-hover:scale-110" />
+          <p className="text-lg font-semibold text-muted-foreground">Reveal Poem</p>
         </div>
 
-        {/* Back of the card */}
+        {/* Back Content (Poem) */}
         <div className={cn(
-          "absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card border-2 border-primary/30 rounded-lg shadow-lg flex items-center justify-center p-6",
-          "transition-opacity duration-500 delay-300",
-          isFlipped ? "opacity-100" : "opacity-0" // Fade-in effect for text
+          "transition-opacity duration-700 delay-300",
+          isBloomed ? "opacity-100 animate-bloom" : "opacity-0"
         )}>
           <p className="text-center whitespace-pre-line text-base md:text-lg leading-relaxed text-foreground">
             {poem}
