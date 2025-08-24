@@ -136,7 +136,7 @@ const Index = () => {
             <span>anuvin_varigal</span>
           </a>
           <p className="text-sm mt-6">
-            &copy; {newgetFullYear()} Anuvin Varigal. All rights reserved by Anusha.
+            &copy; {new Date().getFullYear()} Anuvin Varigal. All rights reserved by Anusha.
           </p>
         </div>
       </footer>
