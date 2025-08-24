@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Feather, Pen, Book, Droplet } from "lucide-react";
+import { Instagram, Feather } from "lucide-react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import PoemCard from "@/components/PoemCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FloatingIcons } from "@/components/FloatingIcons";
 
 const poems = [
   "எனக்கும் அவளுக்குமான உறவு,\nஎனை மறந்து ஒன்றில் ஆழ்ந்துபோகையிலே...\nஏதோ ஓர் உருவத்தில் \nஎனை வந்தடைந்து விடுகிறாள்.....\nதமிழ்!!!",
@@ -15,12 +16,12 @@ const poems = [
 const Index = () => {
   return (
     <div className="w-full min-h-screen font-serif text-foreground bg-background">
+      <FloatingIcons />
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="flex items-center space-x-3 text-primary">
-            <img src="/logo.jpeg" alt="Anu's Logo" className="w-8 h-8 rounded-full" />
-            <Feather className="w-6 h-6 text-foreground" />
+            <Feather className="w-8 h-8 text-foreground" />
             <span className="text-2xl font-bold text-foreground">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
@@ -39,12 +40,6 @@ const Index = () => {
       <main>
         {/* Hero Section */}
         <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
-          {/* Floating Icons */}
-          <Feather className="absolute top-1/4 right-1/4 w-16 h-16 text-primary/30 animate-float opacity-50 transition-transform hover:scale-125" />
-          <Pen className="absolute top-1/2 left-1/4 w-12 h-12 text-secondary/30 animate-float [animation-delay:-1s] opacity-50 transition-transform hover:scale-125" />
-          <Book className="absolute bottom-1/4 right-1/3 w-14 h-14 text-accent/30 animate-float [animation-delay:-2s] opacity-50 transition-transform hover:scale-125" />
-          <Droplet className="absolute bottom-1/3 left-1/3 w-10 h-10 text-primary/20 animate-float [animation-delay:-3s] opacity-50 transition-transform hover:scale-125" />
-          
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
             Welcome to ANUVIN VARIGAL
           </h1>
@@ -63,7 +58,9 @@ const Index = () => {
           <div className="relative container mx-auto px-6 grid md:grid-cols-1 gap-12 items-center">
             <div className="text-center bg-card/80 backdrop-blur-sm p-8 rounded-lg">
               <h2 className="text-4xl font-bold mb-6 text-foreground">About the Author</h2>
-              <img src="/logo.jpeg" alt="Author Anu" className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-primary/50" />
+              <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center bg-primary/10 border-4 border-primary/50">
+                <Feather className="w-16 h-16 text-primary" />
+              </div>
               <p className="text-2xl font-semibold mb-2 text-primary">Anu</p>
               <p className="text-lg mb-4 text-muted-foreground">2nd Year, B.Tech Cyber Security</p>
               <div className="flex justify-center items-start space-x-3 my-6">
