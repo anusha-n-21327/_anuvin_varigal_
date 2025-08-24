@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Instagram, Feather } from "lucide-react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import PoemCard from "@/components/PoemCard";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FloatingIcons } from "@/components/FloatingIcons";
 
@@ -29,10 +28,9 @@ const Index = () => {
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#poems-section" className="hover:text-primary transition-colors">Poems</a>
             <a href="#contact-section" className="hover:text-primary transition-colors">Contact</a>
-            <ThemeToggle />
           </div>
           <div className="md:hidden">
-            <ThemeToggle />
+            {/* Mobile menu can be added here if needed */}
           </div>
         </nav>
       </header>
