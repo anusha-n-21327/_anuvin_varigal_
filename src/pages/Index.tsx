@@ -43,7 +43,7 @@ const Index = () => {
             Welcome to ANUVIN VARIGAL
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl text-muted-foreground">
-            where words and emotions meet.
+            Where words and emotions meet.
           </p>
           <a href="#poems-section">
             <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
@@ -60,8 +60,8 @@ const Index = () => {
               <div className="w-32 h-32 rounded-full mx-auto mb-6 flex items-center justify-center bg-primary/10 border-4 border-primary/50">
                 <Feather className="w-16 h-16 text-primary" />
               </div>
-              <p className="text-2xl font-semibold mb-2 text-primary font-serif">Anu</p>
-              <p className="text-lg mb-4 text-muted-foreground">2nd Year, B.Tech Cyber Security</p>
+              <p className="text-2xl font-semibold mb-2 text-primary font-serif">Anusha N</p>
+              <p className="text-lg mb-4 text-muted-foreground">2nd Year, B.E Cyber Security</p>
               <div className="flex justify-center items-start space-x-3 my-6">
                   <p className="text-lg italic max-w-md text-foreground">
                   "I write to heal, to connect, and to make a momento for the emotions..."
