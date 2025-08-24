@@ -49,99 +49,30 @@
     --ring: 262 83% 58%;
   }
 
-  /* Nature-inspired Theme */
-  .nature {
-    --background: 120 15% 95%;
-    --foreground: 120 25% 15%;
-    --card: 120 10% 100%;
-    --card-foreground: 120 25% 15%;
-    --popover: 120 10% 100%;
-    --popover-foreground: 120 25% 15%;
-    --primary: 140 60% 40%;
-    --primary-foreground: 120 25% 98%;
-    --secondary: 40 50% 80%;
-    --secondary-foreground: 40 25% 20%;
-    --muted: 120 10% 90%;
-    --muted-foreground: 120 20% 45%;
-    --accent: 190 70% 60%;
-    --accent-foreground: 190 25% 15%;
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 120 10% 85%;
-    --input: 120 10% 97%;
-    --ring: 140 60% 40%;
-  }
-
-  /* Artistic & Creative Theme */
-  .artistic {
-    --background: 45 80% 96%;
-    --foreground: 20 15% 25%;
-    --card: 0 0% 100%;
-    --card-foreground: 20 15% 25%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 15% 25%;
-    --primary: 330 80% 60%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 200 80% 70%;
-    --secondary-foreground: 200 25% 15%;
-    --muted: 45 50% 90%;
-    --muted-foreground: 20 15% 45%;
-    --accent: 50 100% 60%;
-    --accent-foreground: 50 25% 15%;
+  /* NEW: Mystic Glow Theme */
+  .mystic-glow {
+    --background: 210 100% 96%; /* Light Sky Blue */
+    --foreground: 250 30% 25%; /* Deep Muted Purple */
+    --card: 210 100% 99%; /* Almost White with Blue tint */
+    --card-foreground: 250 30% 25%;
+    --popover: 210 100% 99%;
+    --popover-foreground: 250 30% 25%;
+    --primary: 270 80% 65%; /* Vibrant Lavender */
+    --primary-foreground: 210 100% 98%;
+    --secondary: 330 100% 90%; /* Soft Pink */
+    --secondary-foreground: 330 50% 30%;
+    --muted: 270 50% 94%;
+    --muted-foreground: 250 20% 45%;
+    --accent: 320 100% 75%; /* Bright Pink */
+    --accent-foreground: 250 30% 15%;
     --destructive: 0 80% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 20 10% 85%;
-    --input: 45 50% 92%;
-    --ring: 330 80% 60%;
+    --border: 270 50% 85%; /* Light Purple Border */
+    --input: 270 50% 96%;
+    --ring: 270 80% 65%;
   }
 
-  /* Poetic & Creative Theme */
-  .poetic {
-    --background: 210 40% 98%; /* Light sky blue */
-    --foreground: 240 10% 15%;
-    --card: 330 80% 97%; /* Soft rose */
-    --card-foreground: 240 10% 15%;
-    --popover: 330 80% 97%;
-    --popover-foreground: 240 10% 15%;
-    --primary: 270 60% 65%; /* Lavender */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 330 70% 80%; /* Lighter rose */
-    --secondary-foreground: 330 80% 20%;
-    --muted: 210 40% 94%;
-    --muted-foreground: 240 5% 45%;
-    --accent: 270 60% 75%; /* Lighter lavender */
-    --accent-foreground: 240 10% 15%;
-    --destructive: 0 80% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 270 60% 85%;
-    --input: 210 40% 96%;
-    --ring: 270 60% 65%;
-  }
-
-  /* Whispers of Ink Theme */
-  .whispers-of-ink {
-    --background: 39 56% 95%; /* Parchment */
-    --foreground: 240 5% 25%; /* Soft Ink Black */
-    --card: 0 0% 100%; /* White Paper */
-    --card-foreground: 240 5% 25%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 5% 25%;
-    --primary: 220 40% 30%; /* Deep Ink Blue */
-    --primary-foreground: 39 56% 95%; /* Parchment */
-    --secondary: 220 10% 80%; /* Light Slate Grey */
-    --secondary-foreground: 220 40% 30%; /* Deep Ink Blue */
-    --muted: 39 30% 90%; /* Lighter Parchment */
-    --muted-foreground: 240 5% 45%; /* Muted Ink */
-    --accent: 35 70% 50%; /* Gold */
-    --accent-foreground: 240 5% 25%;
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 39 20% 85%; /* Parchment Border */
-    --input: 39 30% 92%; /* Parchment Input */
-    --ring: 220 40% 30%;
-  }
-
-  /* NEW: Moonlit Verses Theme */
+  /* Moonlit Verses Theme */
   .moonlit-verses {
     --background: 240 30% 10%; /* Deep night blue */
     --foreground: 240 10% 85%; /* Soft moonlight */
@@ -175,14 +106,18 @@
   body {
     @apply bg-background text-foreground;
   }
-  .poetic body {
-    background-image: linear-gradient(to top right, hsl(var(--background)), hsl(var(--card)));
-  }
-  .whispers-of-ink body {
-    background-image: linear-gradient(to top right, hsl(var(--background)), hsl(var(--muted)));
-  }
   .moonlit-verses body {
     background: radial-gradient(ellipse at center, hsl(240, 30%, 18%), hsl(var(--background)));
+  }
+  .mystic-glow body {
+    background: linear-gradient(
+      -45deg,
+      hsl(210, 100%, 92%),
+      hsl(270, 100%, 92%),
+      hsl(330, 100%, 92%)
+    );
+    background-size: 400% 400%;
+    animation: animated-gradient 15s ease infinite;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
@@ -208,6 +143,18 @@
     }
     50% {
       filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.8));
+    }
+  }
+
+  @keyframes animated-gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 
