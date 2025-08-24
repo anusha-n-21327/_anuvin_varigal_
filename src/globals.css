@@ -58,7 +58,7 @@
     --card-foreground: 30 40% 20%;
     --popover: 350 100% 98%;
     --popover-foreground: 30 40% 20%;
-    --primary: 45 85% 65%; /* Golden Accent */
+    --primary: 35 55% 75%; /* Soft Sandalwood */
     --primary-foreground: 30 40% 15%;
     --secondary: 25 100% 95%; /* Peach */
     --secondary-foreground: 25 50% 30%;
@@ -70,7 +70,7 @@
     --destructive-foreground: 0 0% 100%;
     --border: 90 30% 88%; /* Soft Green */
     --input: 30 50% 97%;
-    --ring: 45 85% 65%;
+    --ring: 35 55% 75%; /* Soft Sandalwood */
   }
 }
 
