@@ -5,6 +5,12 @@
     <stop offset="1" stop-color="#FF66B2"/>
   </linearGradient>
 </defs>
+<!-- Book paths -->
+<path d="M27 23V9C27 6.23858 24.7614 4 22 4H10C7.23858 4 5 6.23858 5 9V23C5 25.7614 7.23858 28 10 28H22C24.7614 28 27 25.7614 27 23Z" stroke="url(#quillGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 4V28" stroke="url(#quillGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 4C19.2386 4 17 6.23858 17 9V23C17 25.7614 19.2386 28 22 28" stroke="url(#quillGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 4C12.7614 4 15 6.23858 15 9V23C15 25.7614 12.7614 28 10 28" stroke="url(#quillGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- Quill paths -->
 <path d="M25.5 6.5C25.5 6.5 23 10 16 18C9 26 4.5 30 4.5 30C4.5 30 9 23 16 15C23 7 25.5 6.5 25.5 6.5Z" stroke="url(#quillGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M21.5 10.5C21.5 10.5 22.5 6.5 25.5 6.5" stroke="url(#quillGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M17.5 14.5L10.5 21.5" stroke="url(#quillGradient)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
