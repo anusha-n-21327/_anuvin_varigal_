@@ -4,48 +4,49 @@
 
 @layer base {
   :root {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 262.1 83.3% 57.8%;
+    --background: 330 60% 98%; /* Very light pink for paper background */
+    --foreground: 220 10% 20%; /* Dark grey for text */
+    --card: 0 0% 100%; /* White card background */
+    --card-foreground: 220 10% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 20%;
+    --primary: 270 70% 50%; /* Vibrant purple */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 330 60% 80%; /* Soft pink */
+    --secondary-foreground: 220 10% 20%; /* Dark text on secondary */
+    --muted: 220 10% 90%; /* Light grey for muted elements */
+    --muted-foreground: 220 10% 40%;
+    --accent: 210 70% 60%; /* Medium blue */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 85%; /* Light grey border */
+    --input: 220 10% 95%; /* Very light grey input background */
+    --ring: 270 70% 50%; /* Primary purple for ring */
     --radius: 0.5rem;
   }
 
+  /* Since a light theme is requested, the 'dark' class will mirror the light theme for consistency */
   .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 262.1 83.3% 57.8%;
+    --background: 330 60% 98%;
+    --foreground: 220 10% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 20%;
+    --primary: 270 70% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 330 60% 80%;
+    --secondary-foreground: 220 10% 20%;
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 210 70% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 85%;
+    --input: 220 10% 95%;
+    --ring: 270 70% 50%;
   }
 }
 
@@ -55,52 +56,15 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-color: #0d1117;
+    /* Textured pink paper effect */
+    background-color: hsl(var(--background)); /* Base pink color */
+    background-image: 
+      linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%, rgba(0,0,0,0.03) 100%),
+      linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%, rgba(0,0,0,0.03) 100%);
+    background-size: 20px 20px; /* Adjust size for desired texture density */
   }
 }
 
 @layer utilities {
-  .glow-container {
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-  }
-
-  .glow-container::before,
-  .glow-container::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.15;
-  }
-
-  .glow-container::before {
-    width: 500px;
-    height: 500px;
-    background-color: #6a0dad; /* Purple */
-    top: -20%;
-    left: -20%;
-    animation: glow-anim1 18s infinite alternate;
-  }
-
-  .glow-container::after {
-    width: 450px;
-    height: 450px;
-    background-color: #c13584; /* Instagram Pink */
-    bottom: -15%;
-    right: -15%;
-    animation: glow-anim2 22s infinite alternate;
-  }
-
-  @keyframes glow-anim1 {
-    from { transform: translate(0, 0) scale(1); }
-    to { transform: translate(100px, 80px) scale(1.2); }
-  }
-
-  @keyframes glow-anim2 {
-    from { transform: translate(0, 0) scale(1.2); }
-    to { transform: translate(-80px, -60px) scale(1); }
-  }
+  /* Removed glow-container styles as they are for a dark theme and no longer fit the new aesthetic. */
 }

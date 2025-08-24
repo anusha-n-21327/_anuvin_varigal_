@@ -26,14 +26,14 @@ export function LoginDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" className="bg-transparent border-violet-400 text-violet-400 hover:bg-violet-400 hover:text-slate-900">
+        <Button variant="outline" className="bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground"> {/* Updated button colors */}
           Sign In
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-slate-900 border-slate-700 text-white">
+      <DialogContent className="sm:max-w-[425px] bg-card border-border text-foreground"> {/* Updated background, border, and text colors */}
         <DialogHeader>
           <DialogTitle>Sign In</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-muted-foreground"> {/* Updated text color */}
             Enter your credentials to access the poems. (This is a demo)
           </DialogDescription>
         </DialogHeader>
@@ -42,16 +42,16 @@ export function LoginDialog() {
             <Label htmlFor="email" className="text-right">
               Email
             </Label>
-            <Input id="email" defaultValue="poet@example.com" className="col-span-3 bg-slate-800 border-slate-600" />
+            <Input id="email" defaultValue="poet@example.com" className="col-span-3 bg-input border-border text-foreground" /> {/* Updated input colors */}
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="password_fake" className="text-right">
               Password
             </Label>
-            <Input id="password_fake" type="password" defaultValue="password" className="col-span-3 bg-slate-800 border-slate-600" />
+            <Input id="password_fake" type="password" defaultValue="password" className="col-span-3 bg-input border-border text-foreground" /> {/* Updated input colors */}
           </div>
         </div>
-        <Button onClick={handleLogin} className="bg-violet-600 hover:bg-violet-700">Sign In</Button>
+        <Button onClick={handleLogin} className="bg-primary hover:bg-primary/90 text-primary-foreground">Sign In</Button> {/* Updated button colors */}
       </DialogContent>
     </Dialog>
   );

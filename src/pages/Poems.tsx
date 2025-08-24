@@ -11,13 +11,13 @@ const poems = [
 
 const Poems = () => {
   return (
-    <div className="min-h-screen w-full p-4 sm:p-8 font-serif text-gray-200">
+    <div className="min-h-screen w-full p-4 sm:p-8 font-serif text-foreground"> {/* Changed text-gray-200 to text-foreground */}
       <div className="max-w-5xl mx-auto">
-        <Link to="/" className="inline-flex items-center text-lg hover:text-violet-400 mb-8 group">
+        <Link to="/" className="inline-flex items-center text-lg hover:text-primary mb-8 group"> {/* Updated hover color */}
           <ArrowLeft className="w-5 h-5 mr-2 transition-transform group-hover:-translate-x-1" />
           Back to Home
         </Link>
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">Anu's Poems</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-foreground">Anu's Poems</h1> {/* Changed text-white to text-foreground */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
           {poems.map((poem, index) => (
             <PoemCard key={index} poem={poem} />
