@@ -3,6 +3,7 @@ import { Instagram, Feather } from "lucide-react";
 import PoemCard from "@/components/PoemCard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FloatingIcons } from "@/components/FloatingIcons";
+import MobileNav from "@/components/MobileNav";
 
 const poems = [
   "எனக்கும் அவளுக்குமான உறவு,\nஎனை மறந்து ஒன்றில் ஆழ்ந்துபோகையிலே...\nஏதோ ஓர் உருவத்தில் \nஎனை வந்தடைந்து விடுகிறாள்.....\nதமிழ்!!!",
@@ -29,7 +30,7 @@ const Index = () => {
             <a href="#contact-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Contact</a>
           </div>
           <div className="md:hidden">
-            {/* Mobile menu can be added here if needed */}
+            <MobileNav />
           </div>
         </nav>
       </header>
