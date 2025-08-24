@@ -23,10 +23,10 @@ const Index = () => {
             <span className="text-2xl font-bold text-foreground font-serif">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#home" className="hover:text-primary transition-colors">Home</a>
-            <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#poems-section" className="hover:text-primary transition-colors">Poems</a>
-            <a href="#contact-section" className="hover:text-primary transition-colors">Contact</a>
+            <a href="#home" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Home</a>
+            <a href="#about" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">About</a>
+            <a href="#poems-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Poems</a>
+            <a href="#contact-section" className="px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Contact</a>
           </div>
           <div className="md:hidden">
             {/* Mobile menu can be added here if needed */}
