@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Instagram } from "lucide-react";
+import { Instagram, Feather } from "lucide-react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import PoemCard from "@/components/PoemCard";
-import { ThemeToggle } from "@/components/ThemeToggle"; // Import ThemeToggle
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const poems = [
   "எனக்கும் அவளுக்குமான உறவு,\nஎனை மறந்து ஒன்றில் ஆழ்ந்துபோகையிலே...\nஏதோ ஓர் உருவத்தில் \nஎனை வந்தடைந்து விடுகிறாள்.....\nதமிழ்!!!",
@@ -18,24 +19,26 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm z-50 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <a href="#home" className="flex items-center space-x-3 text-primary">
-            <img src="/logo.jpeg" alt="Anu's Logo" className="w-8 h-8 rounded-full" /> {/* Header Icon */}
+            <img src="/logo.jpeg" alt="Anu's Logo" className="w-8 h-8 rounded-full" />
             <span className="text-2xl font-bold text-foreground">ANUVIN VARIGAL</span>
           </a>
           <div className="hidden md:flex items-center space-x-6">
             <a href="#about" className="hover:text-primary transition-colors">About</a>
             <a href="#poems-section" className="hover:text-primary transition-colors">Poems</a>
-            <a href="https://www.instagram.com/anuvin_varigal" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Contact</a> {/* Contact Link */}
-            <ThemeToggle /> {/* Theme Toggle */}
+            <a href="#contact-section" className="hover:text-primary transition-colors">Contact</a>
+            <ThemeToggle />
           </div>
           <div className="md:hidden">
-            <ThemeToggle /> {/* Theme Toggle for mobile */}
+            <ThemeToggle />
           </div>
         </nav>
       </header>
 
       <main>
         {/* Hero Section */}
-        <section id="home" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
+        <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
+          <Feather className="absolute top-1/4 right-1/4 w-16 h-16 text-primary/30 animate-float opacity-50" />
+          <Feather className="absolute bottom-1/4 left-1/4 w-12 h-12 text-secondary/30 animate-float [animation-delay:-2s] opacity-50" />
           <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-foreground">
             Welcome to ANUVIN VARIGAL
           </h1>
@@ -43,7 +46,7 @@ const Index = () => {
             where words and emotions meet.
           </p>
           <a href="#poems-section">
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
               Read my poems
             </Button>
           </a>
@@ -54,7 +57,7 @@ const Index = () => {
           <div className="container mx-auto px-6 grid md:grid-cols-1 gap-12 items-center">
             <div className="text-center">
               <h2 className="text-4xl font-bold mb-6 text-foreground">About the Author</h2>
-              <img src="/logo.jpeg" alt="Author Anu" className="w-32 h-32 rounded-full mx-auto mb-6 object-cover" /> {/* Author Image */}
+              <img src="/logo.jpeg" alt="Author Anu" className="w-32 h-32 rounded-full mx-auto mb-6 object-cover" />
               <p className="text-2xl font-semibold mb-2 text-primary">Anu</p>
               <p className="text-lg mb-4 text-muted-foreground">2nd Year, B.Tech Cyber Security</p>
               <div className="flex justify-center items-start space-x-3 my-6">
@@ -78,19 +81,24 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section id="cta" className="py-20">
+        {/* Contact Section */}
+        <section id="contact-section" className="py-20">
           <div className="container mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Wanna have all my poems in your Inbox?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              (This feature is coming soon!)
-            </p>
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Follow me on Instagram for daily poetry!</h3>
-            <a href="https://www.instagram.com/anuvin_varigal" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                <Instagram className="mr-2 h-5 w-5" /> Follow @anuvin_varigal
-              </Button>
-            </a>
+            <Card className="max-w-lg mx-auto bg-card/80 backdrop-blur-sm border-primary/20 shadow-xl">
+              <CardHeader>
+                <CardTitle className="text-3xl md:text-4xl font-bold text-foreground">Connect with Me</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Follow my journey and get your daily dose of poetry on Instagram.
+                </p>
+                <a href="https://www.instagram.com/anuvin_varigal" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground transition-transform hover:scale-105">
+                    <Instagram className="mr-2 h-5 w-5" /> Follow @anuvin_varigal
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </main>
