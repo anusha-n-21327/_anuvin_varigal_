@@ -53,9 +53,9 @@
   .mystic-glow {
     --background: 210 100% 96%; /* Light Sky Blue */
     --foreground: 250 30% 25%; /* Deep Muted Purple */
-    --card: 210 100% 99%; /* Almost White with Blue tint */
+    --card: 270 80% 97%; /* Light Lavender */
     --card-foreground: 250 30% 25%;
-    --popover: 210 100% 99%;
+    --popover: 270 80% 97%; /* Light Lavender */
     --popover-foreground: 250 30% 25%;
     --primary: 270 80% 65%; /* Vibrant Lavender */
     --primary-foreground: 210 100% 98%;
