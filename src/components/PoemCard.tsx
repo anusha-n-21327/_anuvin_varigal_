@@ -8,7 +8,6 @@ interface PoemCardProps {
 
 const PoemCard = ({ poem }: PoemCardProps) => {
   const [isBloomed, setIsBloomed] = useState(false);
-  const revealTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = () => {
@@ -17,23 +16,19 @@ const PoemCard = ({ poem }: PoemCardProps) => {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
     }
-    // Start a timer to reveal the poem after 5 seconds
-    revealTimeoutRef.current = setTimeout(() => {
-      setIsBloomed(true);
-      // Once revealed, start a timer to hide it after 4 seconds
-      hideTimeoutRef.current = setTimeout(() => {
-        setIsBloomed(false);
-        hideTimeoutRef.current = null;
-      }, 4000); // Hide after 4 seconds
-    }, 5000); // Reveal after 5 seconds
+    
+    // Reveal the poem immediately
+    setIsBloomed(true);
+
+    // Start a timer to hide it after 4 seconds
+    hideTimeoutRef.current = setTimeout(() => {
+      setIsBloomed(false);
+      hideTimeoutRef.current = null;
+    }, 4000); // Hide after 4 seconds
   };
 
   const handleMouseLeave = () => {
-    // Clear both timers immediately
-    if (revealTimeoutRef.current) {
-      clearTimeout(revealTimeoutRef.current);
-      revealTimeoutRef.current = null;
-    }
+    // Clear the hide timer immediately
     if (hideTimeoutRef.current) {
       clearTimeout(hideTimeoutRef.current);
       hideTimeoutRef.current = null;
@@ -45,9 +40,6 @@ const PoemCard = ({ poem }: PoemCardProps) => {
   // Clean up timeouts on component unmount to prevent memory leaks
   useEffect(() => {
     return () => {
-      if (revealTimeoutRef.current) {
-        clearTimeout(revealTimeoutRef.current);
-      }
       if (hideTimeoutRef.current) {
         clearTimeout(hideTimeoutRef.current);
       }
