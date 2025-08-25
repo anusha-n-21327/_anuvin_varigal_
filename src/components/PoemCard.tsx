@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Flower2 } from 'lucide-react';
 
@@ -8,23 +8,51 @@ interface PoemCardProps {
 
 const PoemCard = ({ poem }: PoemCardProps) => {
   const [isBloomed, setIsBloomed] = useState(false);
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const revealTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = () => {
+    // Clear any existing hide timeout if we re-hover before it hides
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = null;
+    }
     // Start a timer to reveal the poem after 5 seconds
-    hoverTimeoutRef.current = setTimeout(() => {
+    revealTimeoutRef.current = setTimeout(() => {
       setIsBloomed(true);
-    }, 5000); // 5000 milliseconds = 5 seconds
+      // Once revealed, start a timer to hide it after 4 seconds
+      hideTimeoutRef.current = setTimeout(() => {
+        setIsBloomed(false);
+        hideTimeoutRef.current = null;
+      }, 4000); // Hide after 4 seconds
+    }, 5000); // Reveal after 5 seconds
   };
 
   const handleMouseLeave = () => {
-    // Clear the timer if the mouse leaves before 5 seconds
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
+    // Clear both timers immediately
+    if (revealTimeoutRef.current) {
+      clearTimeout(revealTimeoutRef.current);
+      revealTimeoutRef.current = null;
     }
-    // Hide the poem immediately when the mouse leaves
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current);
+      hideTimeoutRef.current = null;
+    }
+    // Hide the poem immediately
     setIsBloomed(false);
   };
+
+  // Clean up timeouts on component unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      if (revealTimeoutRef.current) {
+        clearTimeout(revealTimeoutRef.current);
+      }
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div
