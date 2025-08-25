@@ -10,9 +10,7 @@ const ParticleBackground = () => {
     await loadSlim(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {
-    console.log("Particles container loaded", container);
-  }, []);
+  const particlesLoaded = useCallback(async () => {}, []);
 
   return (
     <Particles
@@ -22,11 +20,11 @@ const ParticleBackground = () => {
       options={{
         fullScreen: {
           enable: true,
-          zIndex: -2, // Ensure it's behind other content
+          zIndex: -1, // Adjust z-index for proper layering
         },
         background: {
           color: {
-            value: "transparent", // Use transparent background as the body already has a gradient
+            value: "transparent",
           },
         },
         fpsLimit: 60,

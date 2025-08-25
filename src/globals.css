@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  #root {
+    isolation: isolate;
+  }
+
   /* Default Theme: Dark & Mystical */
   :root {
     --background: 240 10% 3.9%;
