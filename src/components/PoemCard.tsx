@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Flower2 } from 'lucide-react';
 
@@ -8,15 +8,29 @@ interface PoemCardProps {
 
 const PoemCard = ({ poem }: PoemCardProps) => {
   const [isBloomed, setIsBloomed] = useState(false);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleCardClick = () => {
-    setIsBloomed(!isBloomed);
+  const handleMouseEnter = () => {
+    // Start a timer to reveal the poem after 5 seconds
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsBloomed(true);
+    }, 5000); // 5000 milliseconds = 5 seconds
+  };
+
+  const handleMouseLeave = () => {
+    // Clear the timer if the mouse leaves before 5 seconds
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    // Hide the poem immediately when the mouse leaves
+    setIsBloomed(false);
   };
 
   return (
     <div
       className="group w-full h-64 cursor-pointer"
-      onClick={handleCardClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div
         className={cn(
@@ -32,7 +46,7 @@ const PoemCard = ({ poem }: PoemCardProps) => {
           isBloomed ? "opacity-0" : "opacity-100"
         )}>
           <Flower2 className="w-12 h-12 text-primary/50 mb-4 transition-transform group-hover:scale-110" />
-          <p className="text-lg font-semibold text-muted-foreground">Reveal Poem</p>
+          <p className="text-lg font-semibold text-muted-foreground">Hover to Reveal Poem</p>
         </div>
 
         {/* Back Content (Poem) */}
